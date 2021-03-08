@@ -1,3 +1,6 @@
+//IMPORTANT INFO! 'https://cors-anywhere.herokuapp.com' must be placed at the beginning of the url for this to work, however prior to use must go to http://cors-anywhere.herokuapp.com/corsdemo in order to access cors-anywhere due to abuses of the site.
+
+
 const apiKey = "FHkF8HJhmL4qLXwTrpSvQHBElxdhUU3hctsYYOYxbCse_lBQr59SDU-Hw7zlJbuxYulXJydcq7IQPYyJV9l3QLvF8mmD2pQaHKqSLqQtu2YGmD4OiEB96KtXew9GYHYx";
 
 const Yelp = {
