@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
         this.state = {
              term : '',
              location: '',
-             sortBy: 'Best Match',
+             sortBy: 'best_match',
         }
 
         this.sortByOptions = {
@@ -54,10 +54,11 @@ class SearchBar extends React.Component {
         })
     }
 
-    handleClick(){
-        {this.props.searchYelp(
+    handleClick(e){
+        this.props.searchYelp(
             this.state.term, this.state.location, this.state.sortBy
-        )}
+        );
+        e.preventDefault();
     }
     
 
@@ -67,7 +68,7 @@ class SearchBar extends React.Component {
         //creates a list of values iterating through keys list
         return keys.map(x => 
              (
-                <li key={this.sortByOptions[x]} className={this.getSortByClass(x)} onClick={this.handleSortByChange.bind(this, x)}>{x}</li>
+                <li key={this.sortByOptions[x]} className={this.getSortByClass(this.sortByOptions[x])} onClick={this.handleSortByChange.bind(this, this.sortByOptions[x])}>{x}</li>
             ));
 }
         
@@ -85,8 +86,8 @@ class SearchBar extends React.Component {
                         <input placeholder="Search Businesses" type='text' onInput={this.handleBusinessSearch}/>
                         <input placeholder="Where?" type='text' onInput={this.handleLocationSearch}/>
                     </div>
-                    <div className="SearchBar-submit" onClick={this.handleClick}>
-                        <a>Let's Go</a>
+                    <div className="SearchBar-submit" >
+                        <a onClick={this.handleClick} >Let's Go</a>
                     </div>
                 </div>
             </div>

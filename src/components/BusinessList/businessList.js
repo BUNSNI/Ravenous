@@ -9,7 +9,7 @@ class BusinessList extends React.Component {
             <div>
                 <div className="BusinessList">
                     {this.props.busy.map(x => (
-                        <Business business={x} />
+                        <Business business={x} key={x.id}/>
                     ))}
                 </div>
             </div>
